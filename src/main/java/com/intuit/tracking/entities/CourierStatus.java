@@ -24,5 +24,8 @@ public class CourierStatus {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @Column(name = "courier_salesforce_id")
+    private String salesforceCourierId;
+
     // we can add other values here like address and start point and all
 }

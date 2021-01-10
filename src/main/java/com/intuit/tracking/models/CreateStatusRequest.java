@@ -22,11 +22,14 @@ public class CreateStatusRequest {
     private String updatedBy;
     @NotBlank(message = "status by can't be null or empty")
     private String status;
+    @NotBlank(message = "salesforce courier id can't be null or empty")
+    private String salesforceCourierId;
 
     public CourierStatus toCourierStatus() {
         CourierStatus courierStatus = new CourierStatus();
         courierStatus.setCreatedAt(LocalDateTime.now());
         courierStatus.setStatus(this.status);
+        courierStatus.setSalesforceCourierId(this.salesforceCourierId);
         return courierStatus;
     }
 
