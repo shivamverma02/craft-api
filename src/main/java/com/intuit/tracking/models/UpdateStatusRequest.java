@@ -30,12 +30,20 @@ public class UpdateStatusRequest {
     @NotBlank(message = "status can't be null or empty")
     private String status;
 
+    @NotBlank(message = "From location can't be null or empty")
+    private String fromLocation;
+
+    @NotBlank(message = "destination location can't be empty")
+    private String destinationLocation;
+
     public CourierStatusLogs toCourierUpdate() {
         CourierStatusLogs courierStatus = new CourierStatusLogs();
         courierStatus.setUpdatedAt(LocalDateTime.now());
         courierStatus.setStatus(this.status);
         courierStatus.setCourierId(this.trackingId);
         courierStatus.setUpdatedBy(this.updatedBy);
+        courierStatus.setFromLocation(this.fromLocation);
+        courierStatus.setDestinationLocation(this.destinationLocation);
         return courierStatus;
     }
 }

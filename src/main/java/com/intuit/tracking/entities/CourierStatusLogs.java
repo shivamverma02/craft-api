@@ -31,4 +31,10 @@ public class CourierStatusLogs {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "from_location")
+    private String fromLocation;
+
+    @Column(name = "destination_location")
+    private String destinationLocation;
+
 }
